@@ -16,19 +16,36 @@ React Native, react-native-get-location (sorry, but you will need to permit loca
 
 - Clear day
 
+![screenshot_clear_day](https://user-images.githubusercontent.com/20016457/177051612-b242a748-2ca3-45f1-8065-e56d9336af4d.png)
+
 - Clear night
+
+![screenshot_clear_night](https://user-images.githubusercontent.com/20016457/177051633-ea4d9a2f-e342-4056-8871-ede47d698a2a.png)
+
 
 - Cloudy day
 
+![screenshot_cloudy_day](https://user-images.githubusercontent.com/20016457/177051636-7ba858f7-c672-47ab-a249-64c3682acd8e.png)
+
 - Cloudy night
+
+![screenshot_cloudy_night](https://user-images.githubusercontent.com/20016457/177051640-be848546-b31b-400d-9a6f-0f4b13bce6ec.png)
 
 - Rainy day
 
+![screenshot_rainy_day](https://user-images.githubusercontent.com/20016457/177051642-4c242852-e457-4ce8-a886-06747f5db9f7.png)
+
 - Rainy night
+
+![screenshot_rainy_night](https://user-images.githubusercontent.com/20016457/177051643-3f3d2f11-1d60-4750-92a5-0b7749cde2d0.png)
 
 - Snow day
 
+![screenshot_snow_day](https://user-images.githubusercontent.com/20016457/177051645-9383634b-1d14-4730-a545-40983ea6401b.png)
+
 - Snow night
+
+![screenshot_snow_night](https://user-images.githubusercontent.com/20016457/177051647-bbe0acf4-fc83-4130-83a4-3fe3e213960d.png)
 
 # Steps
 
