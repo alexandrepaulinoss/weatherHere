@@ -6,7 +6,7 @@ Use the selector to choose the temperature and wind speed unity, also the `Refre
 
 On the right side of the temperature you can see an icon indicating the weather condition (provided by OpenWeather), also the background is updated depending the hour and weather condition😜.
 
-Let some `console.log` so you track what is happening😱. But you can easily enable/disable it changing the variable `showLogInfo` to `true` or `false` on `src/screens/home/index.tsx:25` 😊
+Let some `console.log` so you track what is happening😱. But you can easily enable/disable it changing the variable `showLogInfo` to `true` or `false` on `App.tsx:8` 😊
 
 # What was used?
 
@@ -21,7 +21,6 @@ React Native, react-native-get-location (sorry, but you will need to permit loca
 - Clear night
 
 ![screenshot_clear_night](https://user-images.githubusercontent.com/20016457/177051633-ea4d9a2f-e342-4056-8871-ede47d698a2a.png)
-
 
 - Cloudy day
 
