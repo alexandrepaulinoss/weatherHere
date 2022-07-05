@@ -17,10 +17,20 @@ const weather = {
   windSpeed: 3.75,
 };
 
+describe('TemperaturesBlock is loading', () => {
+  it('renders correctly', () => {
+    render(<TemperaturesBlock loadingTemperature={true} weather={weather} />);
+
+    expect(screen.getByText('Loading temperatures')).toBeTruthy();
+    expect(screen.queryByText('19ºC')).toBeFalsy();
+  });
+});
+
 describe('TemperaturesBlock is loaded', () => {
   it('renders correctly', () => {
     render(<TemperaturesBlock loadingTemperature={false} weather={weather} />);
 
+    expect(screen.queryByText('Loading temperatures')).toBeFalsy();
     expect(screen.getByText('19ºC')).toBeTruthy();
     expect(screen.getByText('Real feel 17ºC')).toBeTruthy();
     expect(screen.getByText('Min 15ºC')).toBeTruthy();

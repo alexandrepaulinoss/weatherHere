@@ -14,7 +14,10 @@ const TemperaturesBlock = ({
   return (
     <View style={styles.temperatureBlock}>
       {loadingTemperature ? (
-        <ActivityIndicator size="large" color="#fff" />
+        <>
+          <ActivityIndicator size="large" color="#fff" />
+          <Text style={styles.temperatureLoading}>Loading temperatures</Text>
+        </>
       ) : (
         <>
           <View style={styles.temperatureLine}>

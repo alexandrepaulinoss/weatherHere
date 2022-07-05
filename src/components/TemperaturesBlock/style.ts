@@ -18,6 +18,12 @@ const styles = StyleSheet.create({
   temperatureLine: {
     flexDirection: 'row',
   },
+  temperatureLoading: {
+    alignSelf: 'center',
+    color: '#ffffffc8',
+    fontSize: 14,
+    marginTop: 2,
+  },
   temperaturesColumn: {
     width: '45%',
   },
