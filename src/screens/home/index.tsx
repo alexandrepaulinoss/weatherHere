@@ -65,13 +65,17 @@ const Home = ({showLogInfo}: HomeProps) => {
                 weather={weather}
               />
 
-              <View style={styles.refreshButtonContainer}>
-                <RefreshButton setLastUpdate={setLastUpdate} />
-              </View>
+              {!loadingCity && !loadingTemperature ? (
+                <>
+                  <View style={styles.refreshButtonContainer}>
+                    <RefreshButton setLastUpdate={setLastUpdate} />
+                  </View>
 
-              <View style={styles.unitBlock}>
-                <UnitsPicker setWeather={setWeather} weather={weather} />
-              </View>
+                  <View style={styles.unitBlock}>
+                    <UnitsPicker setWeather={setWeather} weather={weather} />
+                  </View>
+                </>
+              ) : null}
             </View>
           </ImageBackground>
         </View>
