@@ -4,6 +4,7 @@ export type AddressProps = {
   cityName: string;
   completeAddress: string;
   countryCode: string;
+  lastUpdate: Date | null;
   stateName: string;
 };
 

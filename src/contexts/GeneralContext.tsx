@@ -33,6 +33,7 @@ export const GeneralProvider: React.FC = ({showLogInfo, children}: any) => {
     completeAddress: '',
     countryCode: '',
     stateName: '',
+    lastUpdate: null,
   });
 
   const [weather, setWeather] = React.useState<WeatherProps>({
@@ -83,6 +84,8 @@ export const GeneralProvider: React.FC = ({showLogInfo, children}: any) => {
 
   React.useEffect(() => {
     if (location.latitude) {
+      // Uses the Google API to get the current address using the coordinates acquired using GetLocation.getCurrentPosition
+      // Don't forget to configure you GOOGLE_KEY on the /.env file
       const apiUri = `https://maps.googleapis.com/maps/api/geocode/json?address=${location.latitude},${location.longitude}&key=${GOOGLE_KEY}`;
 
       showLogInfo && console.log('GOOGLE API URI: ', apiUri);
@@ -103,9 +106,12 @@ export const GeneralProvider: React.FC = ({showLogInfo, children}: any) => {
               completeAddress: addressNode.formatted_address,
               countryCode:
                 addressNode.address_components[addressCount - 2]?.short_name,
+              lastUpdate: new Date(),
               stateName:
                 addressNode.address_components[addressCount - 3]?.short_name,
             });
+
+            showLogInfo && console.log('GOOGLE API ADDRESS: ', address);
           }
         })
         .catch(error => {
@@ -118,10 +124,11 @@ export const GeneralProvider: React.FC = ({showLogInfo, children}: any) => {
 
   React.useEffect(() => {
     if (address.cityName) {
+      // Uses the OpenWeather API to get the weather information using the city, state and country acquired with the Google API
+      // Don't forget to configure you OPEN_WEATHER_KEY on the /.env file
       const apiUri = `https://api.openweathermap.org/data/2.5/weather?q=${address.cityName},${address.stateName},${address.countryCode}&APPID=${OPEN_WEATHER_KEY}&units=${weather.units}`;
 
-      showLogInfo &&
-        console.log('OPEN WEATHER API URI: ', apiUri, location.time);
+      showLogInfo && console.log('OPEN WEATHER API URI: ', apiUri);
 
       setLoadingTemperature(true);
       fetch(apiUri)
@@ -145,6 +152,8 @@ export const GeneralProvider: React.FC = ({showLogInfo, children}: any) => {
             weatherIcon: `http://openweathermap.org/img/wn/${results?.weather[0]?.icon}@2x.png`,
             windSpeed: results.wind?.speed,
           });
+
+          showLogInfo && console.log('OPEN WEATHER INFO: ', address);
         })
         .catch(error => {
           const {code, message} = error;
@@ -152,7 +161,7 @@ export const GeneralProvider: React.FC = ({showLogInfo, children}: any) => {
         })
         .finally(() => setLoadingTemperature(false));
     }
-  }, [address.completeAddress, lastUpdate, weather.units]);
+  }, [address.lastUpdate, weather.units]);
 
   return (
     <GeneralContext.Provider
