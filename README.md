@@ -71,7 +71,11 @@ OPEN_WEATHER_KEY=YourOpenWeatherKeyHere
 
 `You don't need to use '' or "" to store your strings`
 
-# Run it!
+# Run the tests
+
+`yarn test`
+
+# Run the app
 
     react-native start
     react-native run-android
