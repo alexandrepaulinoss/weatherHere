@@ -5,6 +5,12 @@ const styles = StyleSheet.create({
     color: '#ffffffc8',
     fontSize: 12,
   },
+  addressLoading: {
+    alignSelf: 'center',
+    color: '#ffffffc8',
+    fontSize: 14,
+    marginTop: 2,
+  },
   cityName: {
     color: '#fffffff6',
     fontSize: 30,

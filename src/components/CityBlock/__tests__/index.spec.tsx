@@ -19,12 +19,24 @@ const location = {
   time: 1656902888000,
 };
 
+describe('CityBlock is loading', () => {
+  it('renders correctly', () => {
+    render(
+      <CityBlock address={address} loadingCity={true} location={location} />,
+    );
+
+    expect(screen.getByText('Loading address')).toBeTruthy();
+    expect(screen.queryByText('Paranavaí')).toBeFalsy();
+  });
+});
+
 describe('CityBlock is loaded', () => {
   it('renders correctly', () => {
     render(
       <CityBlock address={address} loadingCity={false} location={location} />,
     );
 
+    expect(screen.queryByText('Loading address')).toBeFalsy();
     expect(screen.getByText('Paranavaí')).toBeTruthy();
     expect(
       screen.getByText(

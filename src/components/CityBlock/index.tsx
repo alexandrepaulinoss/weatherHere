@@ -9,7 +9,10 @@ const CityBlock = ({address, loadingCity, location}: CityBlockProps) => {
   return (
     <View style={styles.topBlock}>
       {loadingCity ? (
-        <ActivityIndicator size="large" color="#fff" />
+        <>
+          <ActivityIndicator size="large" color="#fff" />
+          <Text style={styles.addressLoading}>Loading address</Text>
+        </>
       ) : (
         <>
           <Text style={styles.cityName}>{address.cityName}</Text>
