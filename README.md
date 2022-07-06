@@ -71,11 +71,19 @@ OPEN_WEATHER_KEY=YourOpenWeatherKeyHere
 
 `You don't need to use '' or "" to store your strings`
 
+ - If you will run on iOS (macOS):
+  - `cd ios && pod install && cd ..`
+
 # Run the tests
 
 `yarn test`
 
-# Run the app
+# Run the app (Android)
 
     react-native start
     react-native run-android
+
+# Run the app (iOS)
+
+    yarn start
+    yarn ios
